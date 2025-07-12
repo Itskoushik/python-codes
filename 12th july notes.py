@@ -46,6 +46,27 @@ fname(val1, val2, k1=v1, k2=v2, val3, val4)  # mixed arguments
 
 note:
 where *args will take zero to n positional arguments and **kwargs will take zero to n keyword arguments.
+
+when duplicate keys are passed it throws an error.
+it will not consider key value pair like a normal dictionary.
+
+unpacking:
+it is the phenomemon of dividing the collection into individual values
+examples:
+a,b,c="rcb" 
+a #r
+b #c
+c #b
+def fname(a,b,c,d):
+    print(a)
+    print(b)
+    print(c)
+    print(d)
+fname(*[22,33,44,55])  # unpacking the list into individual values
+no of variables must be equal to length of collection.
+
+
+
 '''
 
 
