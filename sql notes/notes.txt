@@ -1,0 +1,61 @@
+sql:it stands for structured query language
+father of sql is raymond boyce with donald chamberlin
+before it was called as SEQUEL(structured english query language)
+sequel got renamed sql in year 1974 ,got certified by ansi in 1986
+
+sql is used to interact with the frontend data stored int the 
+backend or not
+
+sql id used to do backend validation or test data validation
+
+backend validation
+backend validation is basically checking the frontend data is 
+present in the backend
+
+users of sql:
+software engineer
+database admin
+database developers
+
+lets talk abt dma he is the person who provides the access 
+control of the database
+
+versions of oracle sql
+1i,2i,3i....9i
+10g,11g (used by most of us) # we use 11g
+12c,18c,19c,21c,23c
+ where i-internet,c-cloud,g-grid
+
+data:it is peice of value or collection used to describe the real world 
+objects
+rawfact: the data will become rawfact when its not processed
+information: contains the data which describe some real world entity
+but data is not always information
+database:it is used to store the data in systematic and organised way
+it is collection of data , its also a centralised place 
+
+table:they are the combination of rows and columns the data in the table will be stored 
+inside the cell
+schema:its a group of tables or collections of tables is known as schema
+
+
+difference between database and rdbms:
+dbms:
+data will be stored in file format
+we cannot establish the relationship between the files
+it supports single users
+it supports any query language
+it will not support normalisation
+it is used in small scale industries
+rdbms:
+data is stored in table format, bu using primary key and foreign key
+we can establish the relationship between the tables
+it supports multiple users
+it suports only sql query language 
+it will support normalisation
+it is used in medium largescale industries
+
+
+
+
+
