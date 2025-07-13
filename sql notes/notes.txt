@@ -227,8 +227,19 @@ logical operators:
 AND : used to combine two or more conditions, all conditions must be true
 OR : used to combine two or more conditions, at least one condition must be true
 NOT : used to negate the condition, if the condition is true then it will return false and vice versa
+examples:
+select * from employees where emp_salary > 1000; -- salary greater than 1000
+select * from employees where emp_salary < 1000; -- salary less than 1000
+select * from employees where emp_salary >= 1000; -- salary greater than or equal to 1000
+select * from employees where emp_salary <= 1000; -- salary less than or equal to 1000
+select * from employees where emp_salary = 1000; -- salary equal to 1000
+select * from employees where emp_salary <> 1000; -- salary not equal to 1000
+select * from employees where emp_salary > 1000 and emp_dept = 'HR'; -- salary greater than 1000 and department is HR
+select * from employees where emp_salary > 1000 or emp_dept = 'HR'; -- salary greater than 1000 or department is HR
+select * from employees where not emp_salary > 1000; -- salary not greater than 1000
 
 between operator:
+
 
 between operator is used to filter the rows based on the range of values.
 syntax:
@@ -327,3 +338,46 @@ syntax: SELECT MIN(column_name) FROM table_name;
 5. max
 max: it is used to find the maximum value in a column.
 syntax: SELECT MAX(column_name) FROM table_name;
+
+2. single row functions: these functions operate on a single row and return a single value.
+types of single row functions:
+1. upper
+upper: it is used to convert the string to uppercase.
+syntax: SELECT UPPER(column_name) FROM table_name;
+2. lower
+lower: it is used to convert the string to lowercase.
+syntax: SELECT LOWER(column_name) FROM table_name;
+3. initcap
+initcap: it is used to convert the first letter of each word in the string to uppercase and the rest to lowercase.
+syntax: SELECT INITCAP(column_name) FROM table_name;
+
+
+
+
+
+group by clause:
+group by clause is used to group the result set based on one or more columns.
+syntax:
+SELECT column1, column2, ... FROM table_name GROUP BY column_name;
+example:
+SELECT emp_dept, COUNT(*) FROM employees GROUP BY emp_dept; -- count of employees
+group by clause is used with aggregate functions to perform calculations on the grouped data.
+
+
+having clause:
+having clause is used to filter the grouped data based on the condition.
+syntax:
+SELECT column1, column2, ... FROM table_name GROUP BY column_name HAVING condition;
+example:
+
+SELECT emp_dept, COUNT(*) FROM employees GROUP BY emp_dept HAVING COUNT(*) > 5;
+ -- count of employees in each department where count is greater than 5
+
+subquery:
+subquery is a query within a query, it is used to retrieve data from one or more tables based on the result of another query.
+syntax:
+SELECT column1, column2, ... FROM table_name WHERE column_name IN (SELECT column_name FROM table_name WHERE condition);
+example:
+SELECT emp_name FROM employees WHERE emp_dept IN (SELECT emp_dept FROM employees WHERE emp_salary > 1000);
+subquery can be used in the select, where, from, and having clauses.
+
