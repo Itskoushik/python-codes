@@ -53,9 +53,277 @@ we can establish the relationship between the tables
 it supports multiple users
 it suports only sql query language 
 it will support normalisation
-it is used in medium largescale industries
+it is used in medium and largescale industries
+
+topic 2:
+data integrity :
+when we what to store valid data and restrict invalid data in the database we go for data integrity .
+to ensure we are storing only valid data we use the concept of data integrity .
+and it can be achieved by using datatypes/constraints
 
 
+datatype : the type of data which a column can accept is called as datatype, it is mandatory to pass a datatype in the column 
+and a column can have only 1 datatype
+
+datatype are of 4 types:
+1. number
+2. date
+3. varchar
+4. char
+
+char:
+char is used to store fixed length of characters, it will take the space as per the length of the datatype.
+if we define char(10) then it will take 10 bytes of space even if we store only 5 characters
+we can store alphabetic characters, numeric characters and special characters and combination of all
+maximum length of char is 2000 bytes
+default size of char is 1 byte
+
+varchar(deprecated): or varchar2(used rn)
+varchar is used to store variable length of characters, it will take the space as per the length of the data
+stored in the column. we can store alphabetic characters, numeric characters and special characters and combination of all
+maximum length of varchar is 4000 bytes
+no default size for varchar, we need to define the size explicitly
+
+number:
+number is used to store numeric values, it can store both integer and decimal values
+it can store positive and negative values
+number(precision,scale) is used to define the precision and scale of the number
+
+precision is the total number of digits in the number
+scale is the number of digits to the right of the decimal point
+integer is a whole number without decimal point
+int=precision-scale
+
+date:
+date is used to store date and time values.
+it can store date in the format of dd-mon-yyyy or dd-mm-yy 
+no default size for date, it will take 7 bytes of space
+
+constraints:
+these are the rules applied on the columns of the table to ensure the data integrity or they ensure that the data entered is valid..
+constraints are used to restrict the data that can be stored in a column.
+not mandatory but recommended to use constraints
+
+types of constraints:
+1.not null
+2.unique
+3.primary key
+4.foreign key
+5.check
+
+1.not null:
+not null constraint is used to ensure that a column cannot have null values.
+before this we must know what is null values:
+null value: it is a value which is not defined or not known, it is not equal to zero or empty string or space.
+
+remember,
+it will not consume any space 
+null is not equal to another null value
+
+2.unique:
+unique constraint is used to ensure that a column cannot have duplicate values.
+it will allow null values as one null value is not equal to another null value.
+
+3.check:
+check constraint is used to ensure that a column can have only specific values.
+check(condition) is used to define the condition for the column.
+for example:
+create table employee(
+    emp_id number(10) primary key,
+    emp_name varchar2(50) not null,
+    emp_salary number(10,2) check(emp_salary > 0),
+    emp_dept varchar2(20) check(emp_dept in ('HR', 'IT', 'Finance'))
+);
+4.primary key:
+if any column is assigned with not null and unique constraints , it is eligible to be a primary key.
+those keys are called as candidate keys.
+candidate keys which are not primary keys are called as alternate keys.
+it is combination of not null and unique constraints.
+the table can have only one primary key and the table having primary key is called as parent table.
+
+5.foreign key:
+foreign key is used to establish the relationship between two tables or more.
+a primary key of one table can be used as foreign key in another table.
+it is not a combination of not null and unique constraints.
+it will allow duplicate values and null values.
+a table can have multiple foreign keys.
+it is also called as child table or referencing table.
+foreign key is used to ensure referential integrity between the tables.
+
+topic 3:
+DQL: data query language - SELECT
+DDL: data definition language - CREATE, ALTER, DROP, TRUNCATE , RENAME
+DML: data manipulation language - INSERT, UPDATE, DELETE
+DCL: data control language - GRANT, REVOKE
+TCL: transaction control language- COMMIT, ROLLBACK, SAVEPOINT
+DQL:
+DQL is used to query the data from the database or to retrieve the data from the database.
+the main command in DQL is SELECT.
+select has 3 types:
+1.projection
+2.selection
+3.joins
+
+projection:
+projection is used to select specific columns from the table.
+we can use * to select all columns from the table.
+we can restrict the columns but we cannot restrict the rows in projection.
+syntax:
+SELECT */column1, column2, ... FROM table_name;
+
+basic  sql operations:
+1.set : used to set line size or page size
+set lines 100 pages 100
+2.desc(describe): used to describe the table structure.
+desc table_name;
+3.connect: used to connect to the database.
 
 
+* is a metacharacter used to select all columns from the table.
+we cannot write the combination of columns and * in the select statement.
 
+
+distinct clause:
+distinct is used to remove the duplicate rows from the result set.
+it is used in the select statement.
+syntax:
+SELECT DISTINCT column1, column2, ... FROM table_name;
+
+expressions:
+expressions are used to perform calculations or operations on the columns.
+we can use expressions in the select statement.
+syntax:
+SELECT column1, column2, expression FROM table_name;
+
+aliyas name:
+aliyas are used to give a temporary name to the column or table.
+it is used to make the column or table name more readable.
+syntax:
+SELECT column1 AS alias_name FROM table_name; or select sal*12 salary from emp;
+
+
+selection:
+selection is used to filter the rows based on the condition.
+we can use where clause to filter the rows.
+syntax:
+SELECT column1, column2, ... FROM table_name WHERE condition;
+
+where clause:
+where clause is used to filter the rows based on the condition.
+we can use comparison operators (=, <>, >, <, >=, <=) to specify the condition.
+we can use logical operators (AND, OR, NOT) to combine the conditions.
+we can use between operator to filter the rows based on the range of values.
+we can use in operator to filter the rows based on the list of values.
+we can use like operator to filter the rows based on the pattern matching.
+
+comparison operators:
+= : equal to
+<> : not equal to
+> : greater than
+< : less than
+>= : greater than or equal to
+<= : less than or equal to
+logical operators:
+AND : used to combine two or more conditions, all conditions must be true
+OR : used to combine two or more conditions, at least one condition must be true
+NOT : used to negate the condition, if the condition is true then it will return false and vice versa
+
+between operator:
+
+between operator is used to filter the rows based on the range of values.
+syntax:
+SELECT column1, column2, ... FROM table_name WHERE column_name BETWEEN value1 AND value2;
+select * from employees where emp_salary between 1000 and 2000; -- salary between 1000 and 2000
+
+not between operator:
+not between operator is used to filter the rows based on the range of values, but it will return the rows which are not in the range.
+example:
+SELECT * FROM employees WHERE emp_salary NOT BETWEEN 1000 AND 2000; -- salary
+
+in operator:
+in operator is used to filter the rows based on the list of values.
+syntax:
+SELECT column1, column2, ... FROM table_name WHERE column_name IN (value1, value2, ...);
+
+not in operator:
+not in operator is used to filter the rows based on the list of values, but it will return the rows which are not in the list.
+example:
+SELECT * FROM employees WHERE emp_dept not IN ('HR', 'IT'); -- employees who are not in HR or IT department
+
+like operator:
+like operator is used to filter the rows based on the pattern matching.
+syntax:
+SELECT column1, column2, ... FROM table_name WHERE column_name LIKE pattern;
+
+
+special characters in like operator:
+pattern can be a string with wildcard characters:
+% : represents zero or more characters
+_ : represents a single character
+
+examples:
+SELECT * FROM employees WHERE emp_name LIKE 'A%'; -- starts with A
+SELECT * FROM employees WHERE emp_name LIKE '%A'; -- ends with A
+SELECT * FROM employees WHERE emp_name LIKE '%A%'; -- contains A
+select * from employees where emp_name like '_A%'; -- second character is A
+select * from employees where emp_name like 'A__'; -- starts with A and has exactly 2 characters after A
+select * from employees where emp_name like 'A%_'; -- starts with A and has at least one character after A
+select * from employees where emp_name like 'A%_B'; -- starts with A, has at least one character after A and ends with B
+select * from employees where emp_name like 'A%_B%'; -- starts with A, has at least one character after A and ends with B and has any characters in between
+
+
+is operator:
+is operator is used to check if a column is null or not null.
+syntax:
+select * from employees where emp_name is null; -- to check if emp_name is null
+select * from employees where emp_name is not null; -- to check if emp_name is not null
+
+order by clause:
+order by clause is used to sort the result set in ascending or descending order.
+
+syntax:
+SELECT column1, column2, ... FROM table_name ORDER BY column_name [ASC|DESC];
+order by clause can be used with multiple columns.
+order by clause can be used with asc or desc to sort the result set in ascending or descending order.
+
+example:
+SELECT * FROM employees ORDER BY emp_salary ASC; -- sort by emp_salary in ascending order
+SELECT * FROM employees ORDER BY emp_salary DESC; -- sort by emp_salary in descending order
+
+set operators:
+set operators are used to combine the result sets of two or more queries.
+the set operators are:
+
+1. union
+union: it is used to combine the result sets of two or more queries, it will remove the duplicate rows from the result set.
+syntax: SELECT column1, column2, ... FROM table1 UNION SELECT column1, column2, ... FROM table2;
+2. union all
+union all: it is used to combine the result sets of two or more queries, it will not remove the duplicate rows from the result set.
+syntax: SELECT column1, column2, ... FROM table1 UNION ALL SELECT column1, column2, ... FROM table2;
+
+functions:
+functions are used to perform calculations or operations on the columns.
+the functions can be classified into two types:
+1. multiple row functions: these functions operate on multiple rows and return a single value or a set of values.
+types of multiple row functions: they are also called as aggregate functions. or group functions.
+
+1. count/count(*)
+
+count: it is used to count the number of rows in the result set.
+syntax: SELECT COUNT(column_name) FROM table_name;
+
+count(*)
+count(*): it is used to count the number of rows in the result set, it will count all the rows including null values.
+syntax: SELECT COUNT(*) FROM table_name;
+2. sum
+sum: it is used to calculate the sum of the values in a column.
+syntax: SELECT SUM(column_name) FROM table_name;
+3. avg
+avg: it is used to calculate the average of the values in a column.
+syntax: SELECT AVG(column_name) FROM table_name;
+4. min
+min: it is used to find the minimum value in a column.
+syntax: SELECT MIN(column_name) FROM table_name;
+5. max
+max: it is used to find the maximum value in a column.
+syntax: SELECT MAX(column_name) FROM table_name;
