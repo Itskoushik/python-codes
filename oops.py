@@ -198,5 +198,49 @@ pillars of oops:
 1.abstraction: hiding the implementation details and showing only the essential features of the object.
 2.encapsulation: bundling the data and methods that operate on the data within a single unit or class.
 
+class Car:
+    def __init__(self):
+        self.acc=False
+        self.brk=False
+        self.clutch=False
+    def start(self):
+        self.clutch=True
+        self.acc=True
+        print("car started...")
+        
+car1=Car()
+car1.start()    
+
+this is called abstraction where we are hiding the implementation details or code and just delivering essemtial features of the object to user.   
+   
+encapsulation:
+we try to create a capsule of the data + functions
+
+practice q
+
+class Account:
+    def __init__(self,bal,acc):
+        self.balance=bal
+        self.accountno=acc
+    def debit(self,amount):
+        self.balance-=amount
+        print("rs.",amount,"was debitted")
+        print("total balance",self.get_balance())
+    def credit(self,amount):
+        self.balance+=amount
+        print("rs.",amount,"was creditted")
+        print("total balance",self.get_balance())
+    def get_balance(self):
+        return self.balance
+
+acc1=Account(10000,12345)
+# print(acc1.balance)
+# print(acc1.accountno)
+acc1.debit(1000)
+acc1.credit(500)
+acc1.credit(40000)
+
+
+
 
 '''

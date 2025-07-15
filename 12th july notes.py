@@ -64,9 +64,4 @@ def fname(a,b,c,d):
     print(d)
 fname(*[22,33,44,55])  # unpacking the list into individual values
 no of variables must be equal to length of collection.
-
-
-
 '''
-
-
