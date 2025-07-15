@@ -1,7 +1,24 @@
 '''
 oops in python.
+in python we can do 3 types of programming that is procedural , functional and object oriented programming
 "To map with real world scenarios we started using objects in code"
 this is called object oriented programming ,
+
+the main advantage of using oops is a project will be in an organised manner.
+resuing the code using inheritance,providing multiple functions using polymorphism , hiding unneccesaary data using abstraction,providing security to the data using 
+encapsulation
+
+in oops we use class and object. it is collection of variable and methods,
+class: it is a blueprint which consists of properties of real time objects or real time entity
+object:it is an instance of class.or it is a varible created for the class
+
+class is of 2 types:
+
+-inbuilt and user defined class:
+inbuilt class:
+these are the classes which are pre-defined by the developers like int,str,list,tuple,set, etc
+user defined class:
+it is the classes which are defined based on user requirement .
 
 now as we know we have been doing procedural programming in python 
 like for example:-
