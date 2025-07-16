@@ -21,7 +21,7 @@ user defined class:
 it is the classes which are defined based on user requirement .
 
 now as we know we have been doing procedural programming in python 
-like for example:-
+like for example:-~
 a=10
 b=10
 sum=a+b

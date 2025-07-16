@@ -45,7 +45,8 @@ print(fibonacci(int(input("enter the no of values in fibonacci series: "))))
 # i=int(input("enter how many fibonacci series u want: "))
 # a=0
 # b=1
-# print(a,end=" ")
-# for i in range(i-1):
-#     a,b=b,a+b
-#     print(a,end=" ")
+# print(a,end=" ") #0
+# for i in range(i-1): #0 1 2 3
+#     a,b=b,a+b #a=1 b=1 , a=1, b=2, a=2 b=3, a=3 b=5
+#     print(a,end=" ") #1 1 2 3 
+
