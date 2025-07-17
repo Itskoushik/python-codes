@@ -37,10 +37,10 @@ as we have seen we successfully moved from procedural to functional
 programming which is better and as we know we always want the best so we went to oops.
 which is object oriented programming.
 
-now lets dive depp into the topic which is object and class.
+now lets dive deep into the topic which is object and class.
 object:
 rough example: what is object ? this laptop is a object?, my keyboard is an object
-so basically we can say we can make anything an opject but before that we would need to 
+so basically we can say we can make anything an object but before that we would need to 
 define a class in oops.
 
 class is like a blueprint like a plan of 30*40 flat . using this class we can create multiple objects init
@@ -261,3 +261,12 @@ acc1.credit(40000)
 
 
 '''
+# class Student:
+#     def __init__(self, name, marks):  # parameterized constructor
+#         self.name = name
+#         self.marks = marks 
+#         print("adding new student in Database..")
+#         print(self)
+# ob=Student("ram",1)
+# print(ob)
+

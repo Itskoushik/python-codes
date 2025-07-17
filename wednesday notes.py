@@ -49,7 +49,7 @@ upper():	Converts a string into upper case
 strip():	Returns a trimmed version of the string
 lstrip():	Returns a left trim version of the string
 rstrip():	Returns a right trim version of the string
-swapcase():	Swaps cases, lower case becomes upper case and vice versa
+swapcase():	Swaps cases, lower case becomes upper case and vice versa 
 count():	Returns the number of times a specified value occurs in a string
 find():	Searches the string for a specified value and returns the position of where it was found
 index():	Searches the string for a specified value and returns the position of where it was found
@@ -355,3 +355,4 @@ d.popitem()
 d
 {'s': 99, 'b': 'beda', 'x': 10, 'v': 420}
 '''
+
