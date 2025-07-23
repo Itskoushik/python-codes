@@ -75,4 +75,43 @@ find.element()- single element
 find.elements()- list of elements- takes 2 arguement -- locator name`
                                                         value
 
+x path has 2 types:
+1.absolute path --- specific path of ele by traversing from parent tag to child tag ele
+2.relative path----- starts from parent node/tag starts with "/" it uses only tag names
+specify path of the directly using some attributes of that ele
+it directly jumps to ele
+starts with '//'
+it uses mainly attribute also tagname
+//tagname[@attribute.name='attribute_value']
+
+y rel xpath is preffered?????
+it is efficient and takes less instructions
+developer when adds or remove anything from webpage the absolute xpath will be broken
+
+rel xpath
+using attribute "//tagname[@att_name='att_val']"
+using text()    "//tagname[text()='text_of_ele']"
+using contains()  "//tagname[contains(source,'val')]"
+using starts-with() "//tagname[starts-with(source,'val')]"
+
+
+//input[contains(@id,'ab')]
+//button[contains(@type,'a')]
+//a[contains(text(),'s')]
+//button[contains(text(),"selenium")]
+//*[not(@class)]
+//button[@id or contains(@class,"abc")]
+//a[starts-with(text(),"python")]
+//input[contains(@id) and contains(@name)]
+//*[contains(@id,"a") and starts-with(@name)]
+
+
+
+tagname -all select=*
+//*[contains(@id)] or //*[@id]
+
+
+
+
+
 '''

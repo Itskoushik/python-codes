@@ -1,7 +1,7 @@
 '''
 static method
 it is method which neither belong to class or object members but it plays a supportive role for both class method and object method
-it is not necessary to pass self/cls as argument.
+it is not necessary to pass self/self as argument.
 static method decorator have to be used before the function declaration 
 note:
 it is not necessary to call static method outside the class .
@@ -53,25 +53,31 @@ add or create methods like issue book,and return book , a person can take only 4
 class Lib:
     librarian="ariana grande"
     books={"Mahabharata":10,"Ramayana":5,"harry puuter":7,"One piece":3}
-    def __init__(self,stname,phno,):
-         pass
+    def __init__(self,stname,phno,book={}):
+        self.stname=stname
+        self.phno=phno
+        self.book=book
+        
+         
     @classmethod
-    def display_book(cls):
-            print(cls.books)
-    @classmethod
-    def issue(cls):
-        print(cls.books)
+    def display_book(self):
+            print(self.books)
+    
+    def issue(self):
+        print(self.books)
         bk=input("enter the bookname: ")
-        if bk in cls.books:
-            if cls.books[bk]>0:
+        if bk in self.books:
+            if self.books[bk]>0 and len(self.book)<=5:
                 print(f"{bk} is successfully issued!!")
-                cls.books[bk]-=1
-                print(cls.books)
+                self.book[bk]=1
+                
+                self.books[bk]-=1
+                print(self.books)
             else:
                 print(f"{bk} is out of stock!!!")
         else:
             print(f"{bk} is not available in library!!! ")
         
-Lib.issue()
-
+ob=Lib("kishore",9888567802)
+ob.issue()
     
