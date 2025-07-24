@@ -110,8 +110,9 @@ using starts-with() "//tagname[starts-with(source,'val')]"
 tagname -all select=*
 //*[contains(@id)] or //*[@id]
 
-
-
+Browser commands
+close()- it used to close single window wherever driver is focused .
+quit()- it will kill all the windows.
 
 
 '''
