@@ -12,6 +12,22 @@ if su==i:
 else:
     print("not a strong number")
 '''
+# s=int(input("enter the number: "))
+# sum=0
+# for i in str(s):
+#     prod=1
+#     for j in range(1,int(i)+1):
+#         prod*=j
+#     sum+=prod
+# if sum==s:
+#     print("strong number")
+# else:
+#     print("not strong number")
+    
+
+
+
+
 #print the pattern (sq matrix pattern)
 '''
 *****

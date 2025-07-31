@@ -20,7 +20,8 @@
 #         if p%i==0:
 #             return False
 #     else:
-#         return True           
+#         return True   
+# print(is_prime(int(input("enter the number: ")))    )    
 
 # #perfect number
 # def perfn(p,i=1,s=0):
@@ -66,26 +67,26 @@
 
 #consider a str input ,if the len of str is odd check if the chars after middle char concatenated with chars before 
 # middle char is palindrome or not without using slicing
-def pali(s,rev=""):
-    for i in s:
-        rev= i+rev
-    if s==rev:
-        return True
-    else:
-        return False
-def rev(s,rev=""):
-    for i in s:
-        rev= i+rev
-    return rev
+# def pali(s,rev=""):
+#     for i in s:
+#         rev= i+rev
+#     if s==rev:
+#         return True
+#     else:
+#         return False
+# def rev(s,rev=""):
+#     for i in s:
+#         rev= i+rev
+#     return rev
     
-def main(s):
-    if len(s)%2==1:
-        mi=len(s)//2
-        s=s.split(s[mi])
-        st=rev(s[0])+s[1]
-        print(pali(st))
+# def main(s):
+#     if len(s)%2==1:
+#         mi=len(s)//2
+#         s=s.split(s[mi])
+#         st=rev(s[0])+s[1]
+#         print(pali(st))
     
-main(input("enter the string: "))   
+# main(input("enter the string: "))   
     
 
     

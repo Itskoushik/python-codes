@@ -53,15 +53,15 @@ def passport(name,dob,adhaar,pan,gender,phone,addr,altphone=None, per_addr=None)
 #     print(sum)
 # sum_integers(1,2,4,5)
 
-# def count_vowels(s,si=0,ei=None):
-#     if ei == None:
-#         ei = len(s)-1
-#     vowels = "aeiouAEIOU"
-#     count = 0
-#     for i in range(si, ei+1):
-#         if s[i] in vowels:
-#             count += 1
-#     return count
-# print(count_vowels("pandupura Bharatha",4,8))  
+def count_vowels(s,si=0,ei=None):
+    if ei == None:
+        ei = len(s)-1
+    vowels = "aeiouAEIOU"
+    count = 0
+    for i in range(si, ei+1):
+        if s[i] in vowels:
+            count += 1
+    return count
+print(count_vowels("pandupura Bharatha",4,8))  
 
 #wap to create a function which does the following : which is string slicing operation

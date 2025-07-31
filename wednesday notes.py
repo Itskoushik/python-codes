@@ -77,6 +77,8 @@ sort():	Sorts the list
 
 
 '''
+s=[]
+
 #methods on tuple:
 '''
 count()	Returns the number of times a specified value occurs in a tuple

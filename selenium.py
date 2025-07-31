@@ -115,4 +115,66 @@ close()- it used to close single window wherever driver is focused .
 quit()- it will kill all the windows.
 
 
+wait commands
+
+synchronisation problem :
+matching selenium speed with appln speed
+
+
+implicit wait
+no need to wait simply for the browser to react
+to inc the efficency we use implicit wait
+driver.implicitly_wait(10)
+explicit wait:
+
+
+
+
+
+dropdowns- select() class
+by using : 
+selectbyvisible_text
+select_by_value()
+select_by_index()
+
+mouse operations:
+ActionChains()
+
+right click-    context_click()
+dounle click-   double_click()
+drag and drop-  drag_by_drop()
+click and hold- click_hold()
+
+3.ScreenShot
+save_screenshot("path")
+4.Frames
+Switch_to.frame("path")
+
+5.Windows
+Switch_to.window(id)
+
+
+6.Popup/alert
+Switch_to.alert
+v=driver.Switch_to.alert
+v.accept()
+v.dismiss()
+
+framework 
+
+
+pytest:
+pom
+hybrid
+bdd(behave)
+
+pytest:
+it is a unit testing framework. testing each and every line of code we can execute scripts and save time.
+we can execute multiple scripts at 1 shot
+we can skip scripts also
+we can execute specific script also
+we can execute all the scripts parallely 
+we can generate reports so that we can comm to team lead or developers
+we can group the methods or scripts using markers
+to execute scripts which are present in different modules/files
 '''

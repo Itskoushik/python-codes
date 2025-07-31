@@ -35,7 +35,7 @@ where the keys must follow the rules of identifiers and the values can be of any
 
 variable length arguments:
 whenever it is required to pass any number of positional or keyword arguments to a function , 
-we make use of varibale length arguments.
+we make use of variable length arguments.
 
 def fname(*args, **kwargs):
     S.B

@@ -82,9 +82,9 @@ when a function is called, it will execute the instructions based on address .
 #             p+=i
 #         i+=1
 #     if sum==p:
-#         print(sum,"it is a strong number ")
+#         print(sum,"it is a perfect number ")
 #     else:
-#         print(sum,"it is not strong number")
+#         print(sum,"it is not perfect number")
         
 # perfnum()    
 
