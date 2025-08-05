@@ -263,6 +263,265 @@ ch=lambda x:f"{x[0]} is uppercase" if x[0].isupper() else f"{x[0]} is lowercase"
 print(ch("@"))  
 
 wap to find sum of minimum 3 interger and max five interger 
-'''
 ch=lambda x,y,z,a=0,b=0: a+b+x+y+z
 print(ch(*(1,2,3,4,5)))
+
+
+map() function
+it is inbuilt function which is used to execute or perform same set of operation
+for every value in the collection .
+syntax:
+var=map(fname,call)
+print(datatype(var))
+
+example:
+sqr=lambda n:n**2
+sqr_range= map(sqr,range(1,11))
+print(list(sqr_ramge))
+
+or 
+
+print(list(map(lambda x:x**(1/2),range(1,11))))
+print(list(map(lambda x:x**2,range(1,11))))
+
+write a prog to extract all the upper case characters in string collection
+wap to store len of every word present in string collection 
+print(list(map(len,input("enter the string: ).split())))
+wap to store word and its length as key value pair from string collection 
+
+print(dict(map(lambda x:(x,len(x)),input("enter the string: ").split())))
+
+
+{'hello': 'olleh', 'world': 'dlrow', 'koushik': 'kihsuok'}
+print(dict(map(lambda x:(x,x[::-1]),input("enter the string: ").split())))
+
+
+wap to get following output :
+{'HELLO': 'olh', 'WORLD': 'drw', '90': '0'}
+print(dict(map(lambda x:(x,x[::-2].lower()),input("enter the string: ").split())))
+or
+print(dict(map(lambda x:(x.upper(),x[::-2]),input("enter the string: ").split())))
+
+
+wap to store number and its factorial as key value pairs between the range 1,5
+def fact(n):
+    p=1
+    for i in range(1,n+1):
+        p*=i
+    return p
+    
+print(dict(map(lambda x:(x,fact(x)),range(1,6))))
+
+
+# class Payment:
+#     mod=["1.credit card","2.debit card","3.UPI transaction"]
+#     def __init__(self):
+#         self.credit_limit=float(input("enter the credit limit : "))
+#         self.debit_balance=float(input("enter the debit balance : "))
+#         self.upi_balance=float(input("enter the upi wallet balance : "))
+        
+#     def display_pay(self):
+#         for i in self.mod:
+#             print(i)
+#     def process_pay(self):
+#         self.display_pay()
+#         ch=int(input("enter ur payment mode: "))
+#         amt=float(input("enter the amount: "))
+#         if ch==1:
+#             print(".......please enter the credit card details.... ")
+#             name=input("enter the name on card") 
+#             digi=int(input("enter the last 4 digits of the credit card: "))
+#             cvv=int(input("enter the 3 digit cvv pin : "))
+#         if ch==2:
+#             print(".......please enter the debit card details.... ")
+#             name=input("enter the name on card") 
+#             digi=int(input("enter the last 4 digits of the debit card: "))
+#             cvv=int(input("enter the 3 digit cvv pin: "))
+#         if ch==3:   
+#             print(" .......please enter the upi id.... ")
+#             upi=input("enter the upi id: ") 
+            
+# def main():
+#     ob=Payment()
+#     ob.process_pay()
+    
+                
+
+# if __name__=="__main__":
+#     main() 
+
+
+
+wap to extract all the upper case character from string collection
+print("".join(list(filter(lambda a:a.isupper(),input("enter the string: ")))))
+print(dict(map(lambda x:(x,x[::-1]),filter(lambda a:len(a)%2==0,input("enter the string: ").split()))))
+
+
+
+generators()
+it is a function which is used to generate sequence of values using yield keyword .
+when a yield keyword is present in a user defined function, it becomes a generator function.
+def mauve():
+    print("talk")
+    yield "tsunami"
+    print("walk")
+    yield "jujjubi"
+    print("pass")
+    yield "bimar"
+print(list(mauve()))  
+
+1.diff between return and yield
+
+return 
+it is a keyword which is used to terminate a function execution
+it will not execute the next instructions
+typecasting is not required to get output
+it used in normal udf 
+yield
+it is a keyword used to pause the function execution,it continues to execute the next set of instructions
+typecasting is required to get output
+it is used in generator function
+
+
+wap to extract all the integers from list
+print(list(filter(lambda x:type(x)==int,eval(input("enter :")))))
+def ext(l):
+    for i in l:
+        if type(i)==int:
+            yield i
+print(list(ext([1,2,4,"bimar","badmash","kitab"])))
+
+
+wap to generate all the lowercase characters in a list
+# def low():
+#     for i in range(97,123):
+#         yield chr(i)
+# print("".join(list(low())) 
+wap to generate nth fibonacci series 
+
+# def fibo(n,a=0,b=1):
+#     for i in range(n):
+#         yield a
+#         a,b=b,a+b
+# print(list(fibo(int(input("enter : ")))))
+
+wap to generate prime numbers between the range 2-100
+
+def prime(n):
+    for i in range(2,n):
+        if n%i==0:
+            return False
+    return True
+    
+def prime_range():
+    for i in range(2,101):
+        if prime(i)==True:
+            yield i
+                
+print(list(prime_range()))
+
+decorator: it is a function used to add extra features to the existing functions without modifying it .
+a decorator is used on functions  when they have common pre and post task and it is not mandatory to have them both .
+it is of two types:
+inbuilt and user defined decorators
+
+inbuilt decorators are the decorators which are predefined by the developers 
+ex: @classmethod,@staticmethod,@property
+
+udd: these are the decorators which are created on user requirement 
+syntax:
+def deconame(func):
+    def inner(*args,**kwargs):
+        pretask
+        func(*args,**kwargs)
+        posttask
+    return inner
+    
+    
+example:
+def insta(func):
+    def inner(*args,**kwargs):
+        print("------login------")
+        func(*args,**kwargs)
+        print("------logout------")
+    return inner
+
+
+@insta
+def darshan():
+    print("hello")
+    print("bemar pessi")
+    print("bemar pessi")
+    
+@insta   
+def siraj():
+    print("pressure")
+    print("what pressure")
+    
+darshan()
+siraj()
+ 
+ 
+wap which calculate the total execution time  of program
+
+import time
+
+def execute_time(func):
+    def inner(*args,**kwargs):
+        t1=time.time()
+        func(*args,**kwargs)
+        t2=time.time()
+        print()
+        print("execution time :",t2-t1,sep=" ")
+    return inner
+
+@execute_time   
+def siraj():
+    print("pressure")
+    print("what pressure")
+    
+siraj()
+
+
+wap to give 5 sec delay before executing any program
+import time
+
+def execute_time(func):
+    def inner(*args,**kwargs):
+        time.sleep(5)
+        func(*args,**kwargs)
+    return inner
+
+@execute_time   
+def siraj():
+    print("pressure")
+    print("what pressure")
+    
+siraj() 
+
+
+wap which returns positive results when arithmetic opearation is performed
+
+'''
+
+import time
+
+def positive(func):
+    def inner(*args,**kwargs):
+        return abs(func(*args,**kwargs))
+    return inner
+
+@positive  
+def add(a,b):
+    return a+b
+
+@positive
+def mul(a,b,c):
+    return a*b*c
+    
+    
+print(add(10,20))
+print(mul(10,20,-30))
+ 
+
+

@@ -6,7 +6,7 @@ sequel got renamed sql in year 1974 ,got certified by ansi in 1986
 sql is used to interact with the frontend data stored int the 
 backend or not
 
-sql id used to do backend validation or test data validation
+sql is used to do backend validation or test data validation
 
 backend validation
 backend validation is basically checking the frontend data is 
@@ -166,7 +166,7 @@ select has 3 types:
 
 projection:
 projection is used to select specific columns from the table.
-we can use * to select all columns from the table.
+we can use * to select all column,s from the table.
 we can restrict the columns but we cannot restrict the rows in projection.
 syntax:
 SELECT */column1, column2, ... FROM table_name;
