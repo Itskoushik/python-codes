@@ -501,9 +501,6 @@ siraj()
 
 
 wap which returns positive results when arithmetic opearation is performed
-
-'''
-
 import time
 
 def positive(func):
@@ -522,6 +519,145 @@ def mul(a,b,c):
     
 print(add(10,20))
 print(mul(10,20,-30))
+
+comprehension:
+it is a phenomenon of creating a collection by reducing the instructions
+it can be done on list,set,dict and tuple
+
+list comprehension is phenomenon of creating a new list collection by reducing the instructions
+
+
+syntax 1: 
+var=[value for var in collection]
+
+
+wap to store all the squares between the range 1-10
+
+print([x**2 for x in range(1,11)])
+
+wap to get following output:
+[(2, 8), (4, 64), (6, 216)]
+print([(i,i**3) for i in range(2,8,2)])
+
+wap to extract all the integers from list
+[1, 2, 3, 4]
+print([x for x in eval(input("enter the list: "))  if type(x)==int])
+
+
+wap to extract all the digits present in string collection and output in form of string 
+print("".join([i for i in input("enter the string: ") if i.isdigit()]))
+
+
+wap to count the number of upper case vowels characters present in string 
+print(len([i for i in input("enter the string : ") if i in "AEIOU"]))
+
+
+wap to sq the number if its even else cube of it
+var=[tsb if cond else fsb for var in coll]
+
+[1, 4, 27, 16, 125, 36, 343, 64, 729, 100]
+print([i**2 if i%2==0 else i**3 for i in range(1,11)])
+
+wap to get folowing output:
+[('paarin', 6), ('trip', 4), ('pakka', 'akk')]
+print([(i,len(i)) if len(i)%2==0 else (i,i[1:len(i)-1:])for i in input("enter the string: ").split()])
+
+
+wap to get folowing output
+
+[(1, 5), (1, 10), (1, 15), (2, 5), (2, 10), (2, 15), (3, 5), (3, 10), (3, 15)]
+
+print([(i,j) for i in range(1,4) for j in range(5,16,5)])
+
+set comprehension is phenomenon of creating a new set collection by reducing the instructions.
+
+syntax:
+var={value for var in collection}
+var={tsb/value for var in coll if cond}
+var={tsb if cond else fsb for var in coll}
+var={(val1,val2) for var1 in coll for var2 in coll}
+
+
+wap to store all the integers in rev present in list collection
+print({int(str(i)[::-1]) for i in eval(input("enter a set: ")) if type(i)==int})
+
+dictionary comprehension:
+dictionary comprehension is phenomenon of creating a new dictionary collection by reducing the instructions.
+syntax
+var={k:v for var in coll}
+var={k:v for var in coll if cond}
+var={k:v if cond else v for var in coll}
+
+wap to store word and its length as key value pairs present in a string
+{'hello': 5, 'world': 5}
+print({i:len(i) for i in input("enter: ").split()})
+
+wap to store the number and its square as key value pairs if it is odd number, 
+store its cube if it is a even number between the arnge 1-10
+print({i:i**2 if i%2!=0 else i**3 for i in range(1,11)})
+
+wap to store the character and its count keyvalue pair:
+st=input("enter : ")
+print({i:st.count(i) for i in st })
+
+
+note:we can use comprehension on tuple but its called as generator comprehension which returns a generator
+object when we print it meaning address so we need to typecast it to list,set,dict
+print(list((i for i in range(1,11) if i%3!=0)))
+
+
+file handling:
+it is a place or medium where we store collection of data or store data.
+inorder to open a file we use open() function
+
+var=open("filename/loc.extension","mode")
+mode: what type of operation we need to perform on the file
+
+write mode(w) = it is mode which is to write the data  into the file, if the file is not existing , it creates a new file
+if the file is existing it overrides the data
+
+handling text file
+write()- it is a fucntion which is used to write the data into the text file
+syntax:
+var.write("data")
+
+
+writelines()- when multiple lines of data have to be written this function will be used 
+syntax:
+var.writelines(collection)
+var.writelines(["hello i m cristiano ronaldo","i m the goat"])
+
+example:
+f=open("ronaldo.txt","w")
+f.writelines(["quotes","your love makes me strong and ur hate make me strongest"])
+f.close()
+
+read mode:
+it is a mode which is used to read the data , if the file doesnt exist it will give error .
+methods on read
+
+read()- it is a function which is used to read the complete data from the file
+readline()- it is a function which is used to read single line . next time when we use readline it will read from where the cursor is present 
+readlines()- it is a function which is used to return a list of all the lines present in text file separated by comma
+we can use indexing on it .
+
+example:
+print(a.readlines()[1])
+
+f=open("ronaldo.txt","r")
+print(f.readlines()[0])
+f.close()
+'''
+
+
+
+
+    
+
+
+
+
+
  
 
 
