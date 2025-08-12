@@ -28,7 +28,26 @@
 #             print(end="  ")
 #     print()        
             
-# for i in range(1,6):
-#     print("*"*i)
 
+
+# n=int(input('enter:'))
+# i=1
+# while i<=10:
+#     print(n,'*', i,'=', n*i)
+#     i+=1
+
+n=eval(input('enter'))
+st=''
+for i in n:
+    if type(i)==int:
+        rev=0
+        j=i
+        while j!=0 :
+            ld=j%10 #143 
+            rev=rev*10+ld #30
+            j=j//10 #14
+        st+=str(rev)
+print(st)
+        
+            
     

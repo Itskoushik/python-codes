@@ -647,13 +647,176 @@ print(a.readlines()[1])
 f=open("ronaldo.txt","r")
 print(f.readlines()[0])
 f.close()
-'''
+
+handling csv files.
+
+create a csv file which consists of name,age,gen,veg/non-veg,rst fetch name and age of all female who are veg/non veg
+and single store it in new csv file
+
+import csv
+with open("ronaldo.csv","w+",newline="") as f:
+    data=[["name","age","gender","veg-nonveg","rst"],
+          ["ram",22,"m","non-veg","s"],
+          ["sita",21,"f","veg","c"],
+          ["geta",23,"f","non-veg","c"],
+          ["radha",21,"f","veg","s"]]
+    write=csv.writer(f)
+    write.writerows(data)
+    f.seek(0)
+    read=csv.reader(f)
+    for i in list(read)[1::]:
+        data=[]
+        if i[2]=="f" and i[3]=="veg" and i[4]=="s":
+            with open("cr7.csv","w+",newline="") as t:
+                data+=[i[0],i[1]]
+                write=csv.writer(t)
+                write.writerow(data)
+                
+convert text to csv 
+
+import csv
+with open("iplstat.txt","w+") as f:
+    f.writelines(["team1 team2 venue won_by mom\n","rcb csk chep rcb shepard\n","mi csk wan mi sky\n","rcb srh rigen rcb vk"])
+    f.seek(0)
+    for i in f.readlines():
+        o=i.split()
+        print(o)
+        with open("krishna.csv","a+",newline="") as t:
+            write=csv.writer(t)
+            write.writerow(o)
+    with open("krishna.csv","r",newline="") as t:
+        read=csv.reader(t)
+        print(list(read))
+        
+            
+    
+parsing  techinique:
+it is a phenomenon of providing security to the data by transfering from source to destination
+it is of 2 types:
+
+json parsing :
+
+it is a type of parsing technique which is used to provide security to the data by converting it to
+string format(json) which is called as serialisation.
+
+dumps()- it is a function which is used to convert org data into string format
+syntax:
+import json
+org_data=value
+ser_data=json.dumps(org_data)
+
+loads():
+it is a function which is used to convert the string data (json) into org format.
+syntax:
+import json
+ser_data=data
+org_data=json.loads(ser_data)
+
+
+example:
+
+import json
+a=[1,2,3]
+b=json.dumps(a)
+with open("data.txt","w") as x:
+    x.write(b)
+    x.seek(0)
+    res=x.read()
+    print(res,type(res))
+    org_datajson.loads(res)
+    print(org_data,type(org_data),"original data")
 
 
 
+pickle parsing :
+it is type of parsing technique which is used to provide security to the data by converting it to binary format
+
+dumps():
+it is function which is used to convert the original data into binary format .
+syntax:
+import pickle
+org_data=[1,2,3] #value
+s_data=pickle.dumps(org_data)
+
+loads():
+it is function which is used to convert the binary format into original data .
+
+org_data=pickle.loads(s_data)
+
+
+example:
+
+import pickle
+a=[1,2,3]
+b=pickle.dumps(a)
+with open('data2.txt','wb+') as f:
+    x.write(b)
+    x.seek(0)
+    res=x.read()
+    print(res)
+    org_data=pickle.loads(res)
+    print(org_data,"original data")
+
+connection to sql /backend connectivity/db connection
+
+it is a phenomenon of establishing to a db from python file
+using sqlite3 module this can be achieved
+connect()- function used to connect to db through py file
+cursor()- func which gives authority to a variable to write queries
+execute()-to execute
+commit()- to save
+
+
+import sqlite3
+a=sqlite3.connect('ashrama.db')
+b=a.cursor()
+b.execute('create table Vgang (name,phno,addr,gen)')
+b.execute('insert into Vgang values("vinayaka","988345671","hubli","m")')
+a.commit()- to save
+a.close()-to close
+
+fetchone(): it is used to fetch a 1st matched record 
+
+fetchall():it is used to fetch all the matched records present in the table
+
+example:
+import sqlite3
+a=sqlite3.connect('ashrama.db')
+b=a.cursor()
+b.execute('select * from Vgang')
 
     
+    
+    
+    
+iteration : it is a process of traversing through the collection by fetching individual values
+the function which is used to perform this is called iterator.
 
+for loop is considered as a self iterator because it starts from the intial value,
+traverses through the collection by fetching individual values and stops once it reaches end of collection.
+
+iter():
+it is a function which is used to point towards initial node address .
+syntax:
+iter_var=iter(collection)
+
+next():
+it is a function which is used to fetch the individual values by traversing through the collection.
+
+note:
+when it reaches the end of collection and if we use next() it throws stop iteration error.
+
+node: it is a block of mem which consists of 3 parts .
+prev node address, data, next node address 
+
+example:
+d=[1,2,3,4,5]
+i=iter(d)
+next(i) #1
+
+
+
+'''
 
 
 
