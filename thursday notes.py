@@ -119,7 +119,52 @@ note: the number of arguments must be equal to number of values.
 #                 ext+=(i,)
 #     print(ext)
 
-        
+
+# c = 200
+# def fname():
+#     a = 100
+#     def xname():
+#         b = 1000
+#         print(a)
+#         print(b)
+#         def dname():
+#             nonlocal f
+#             f = "red"
+#             print(f)
+#         dname()
+#         print(f)
+#     xname()
+#     print(a)
+#     print(c)
+# print(c)
+# fname()
+# print(f)
+
+c = 200
+def fname():
+    a = 100
+    f = 200
+    def xname():
+        a = 200
+        print(a)
+        print(a)
+        def dname():
+            nonlocal f
+            f = "red"
+            print(f) 
+        def hname():
+            print(f)         
+        dname()
+        hname()
+        print(f) 
+    xname()
+    print(a)
+    print(c)
+    print(f,'1')
+print(c)
+fname()
+
+
 
     
     

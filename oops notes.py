@@ -814,13 +814,157 @@ d=[1,2,3,4,5]
 i=iter(d)
 next(i) #1
 
+exception handling:
+exception:
+it is an unauthorised event occured during execution of the program .
+the exceptions needed to be handled to avoid the interruptions and continue the flow of execution of program.
+exception handling is the phenomenon of making a program execute without any interuptions by handling the exceptions
+in phython to handle the exception try and except block will be used .
+
+in try block to program will return and except block solution for the error meassage will be written .
+types of exception handling :
+1.specific exception handling
+2.generic exception handling
+3.default exception handling
+
+specific exception handling:
+it is a type of exception handling which can be used when the name of exception is known .
+syntax:
+try:
+    program
+except ExceptionName:
+    solution
+    
+try:
+    program
+except ExceptionName:
+    solution
+except ExceptionName2:
+    solution
+
+note: in a single try block multiple except block can be used .
+
+
+def divide():
+    try:
+        a=int(input("enter: "))
+        b=int(input("enter: "))
+        print(a/b)
+        print(d)
+    except ZeroDivisionError:
+        print("zero division handling")
+    except NameError:
+        print("same variable is present")
+divide()
+print("welcome patrick")
+divide()
+print("revise all the topics")
+divide()
+
+generic exception handling:
+it is a type of exception handling where in we handle all exceptions except keyboardInteruptError.
+syntax:
+try:
+    program
+except Exception:
+    solution
+
+default exception handling: it is a type of exception handling where in we handle all exceptions including KeyboardInterruptError
+
+try:
+    program
+except:
+    solution
+
+
+try:
+    for i in range(1,1001):
+        print(i)
+except:
+    print('handledd')
+
+custom exception
+to throw an error message , raise keyword will be used .
+raise ExceptionName ('message')
+where exception should be a predefined error name .
+message is optional
+
+user defined exception :
+in python to throw an error message based on the user requirement 
+class cname(Exception):
+    pass
+raise cname('message')
+
+examples:
+class Good(Exception):
+    pass
+if batch=="SP-A1":
+    raise Good('always best from bottom')
+else:
+    print('ohhh neevu')
+
+
+assertion Error:
+if it is required to throw a error message based on condition "assert" keyword can be used
+
+syntax:
+assert condition,"message"
+s.b
+
+ex:
+a=input("enter:") 
+assert a==a[::-1],"not a palindrome"
+print("palindrome")   
+    
+    
+    
+    
+    
+note: else block can be written for try and except also be used
+it will be executed when there is no error message in the program.
+finally: this block will be executed by default with or without any exception 
+
+Regular expression(regex)
+when it is required to fetch the necessary data from a huge data then regular expression is used
+
+writing patterns will fetch the required data, because of this it is also called as pattern matching.
+
+[A-Z]- to match 1 UC character
+[a-z]- to match 1 LC character
+[0-9]- to match 1 digit -\d
+[a-zA-Z0-9]-to match 1 alphanumeric character -\w
+[A-Z]{m}-to match m number of UC characters
+[A-Z]{m,n}-to match m to n number of UC characters
+
+*   	0 or more
++   	1 or more
+?	    0 or 1
+\b -   set boundaries
+\ - remove spcl behaviour of spcl class
+{n} 	Exactly n
+{n,}	n or more
+{n,m}	Between n and m
+
+
+
+example:
+[6-9][0-9]{9}
+[A-Z]{5}\d{4}[A-Z]
+[1-5][A-Z]{2}\d{2}[A-Z]{2}\d{3}
+
+\d{2}\:\d{2}\:\d{2} - to match time in hh:mm:ss format
+[0-1][0-9]|[2][0-3]\:[0-5][0-9]\:[0-5][0-9] - to match time in 24 hr format
+[0-2][0-9]|[3][0-1]?\:[0][1-9]|[1][0-2]\:[0-5][0-9] 
+
+
+to get the required data re module have to be used.
+import re
+s="joel patrick call 9872533741 , and alternate number 9723518330"
+phn=re.findall(r'\b[6-9][0-9]{9}\b',s)
+print(phn)
 
 
 '''
-
-
-
-
  
 
 
