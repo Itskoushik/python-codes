@@ -113,7 +113,7 @@
 #             s+=f 
 #         if s==p:
 #             print('strong')
-#         else:
+#         elcse:
 #             print('not')         
 # l=eval(input('enter:'))
 # for i in list(set(l)):
@@ -127,10 +127,137 @@
 # print (list(set(l))) 
 
 
+
+
             
-            
-            
- 
+# n=int(input("enter:"))
+# for i in range(2,n):
+#     if n%i==0:
+#         print('not prime')
+#         break
+# else:
+#     print("prime num")
+    
+# def check_prime(n):
+#     for i in range(2,n):
+#         if n%i==0:
+#             print('not prime')
+#             break
+#     else:
+#         print("prime num")
+# def prime(x,y):
+#     for i in range(x,y+1):
+#         print(i,end=" ")
+#         check_prime(i)
+# prime(1,100)
+
+# def check_strong(n):
+#     sum=0
+#     for i in str(n):#125
+#         fact=1
+#         for j in range(1,int(i)+1):
+#             fact*=j
+#         sum+=fact
+#     if sum==n:
+#         return "strong"
+#     else:
+#         return "not strong"
+# def strong(x,y):
+#         for i in range(x,y+1):
+#             if check_strong(i)=="strong":
+#                 print(i," ",check_strong(i))
+# strong(1,300)
+
+#print all num which are prime  prime ,arm,str
+
+# def check_prime(n):
+#     if n>1:
+#         for i in range(2,n):
+#             if n%i==0:
+#                 print(n,"not prime")
+#                 break
+#         else:
+#             return "prime"
+    
+# def check_arm(x):#156
+#     sum=0
+#     l=len(str(x))#3
+#     for i in str(x):
+#         sum+=int(i)**l
+#     if sum==x:
+#         return 'arm'
+        
+# def check_strong(z):
+#     sum=0
+#     for i in str(z):
+#         fact=1
+#         for j in range(1,int(i)):
+#             fact*=j
+#         sum+=fact
+#         if sum==z:
+#             return "strong"
+# def num(x,y):
+#     for i in range(x,y+1):
+#         if check_arm(i)=='arm' and check_prime(i)=='prime':
+#             print(i,"armstrong,prime")
+#         elif check_arm(i)=='arm':
+#             print(i,"armstrong")
+#         elif check_prime(i)=='prime':
+#             print(i,'prime')
+#         elif check_strong(i)=='strong':
+#             print(i,'strong')
+#         # else:
+#         #     print(i,'none of above')
+# num(1,200)
+
+# n=int(input("enter:"))
+# def feb(n):
+#     a,b=0,1
+#     for i in range(5):
+#         print(a,end=" ")
+#         a,b=b,a+b
+# feb(5)
+
+# def feb(n,a=0,b=1):
+#     if n==0:
+#         return a    
+#     print(a)
+#     return feb(n-1,b,a+b)
+# feb(5)
+  
+s="abcda"
+for i in range(len(s)):
+    if s[i] in s[i+1:]:
+        x=s.replace(s[i],"")
+print(x)
+    
+
+s=eval(input("enter: "))
+for i in s:
+    if type(i)==int:
+        max2=i
+        max1=max(i,max2)
+    else:
+        s.remove(i)       
+s.remove(max1)
+print(max(s))
+
+
+
+
+
+
+
+    
+        
+
+    
+        
+        
+    
+
+
+
             
             
                     

@@ -1,4 +1,695 @@
 '''
+oops in python.
+in python we can do 3 types of programming that is procedural , functional and object oriented programming
+"To map with real world scenarios we started using objects in code"
+this is called object oriented programming ,
+
+the main advantage of using oops is a project will be in an organised manner.
+resuing the code using inheritance,providing multiple functions using polymorphism , hiding unneccesaary data using abstraction,providing security to the data using 
+encapsulation
+
+in oops we use class and object. it is collection of variable and methods,
+class: it is a blueprint which consists of properties of real time objects or real time entity
+object:it is an instance of class.or it is a varible created for the class
+
+class is of 2 types:
+
+-inbuilt and user defined class:
+inbuilt class:
+these are the classes which are pre-defined by the developers like int,str,list,tuple,set, etc
+user defined class:
+it is the classes which are defined based on user requirement .
+
+now as we know we have been doing procedural programming in python 
+like for example:-~
+a=10
+b=10
+sum=a+b
+print(sum)
+diff=a-b
+print(diff) #execution is happening line by line as we were also
+writing it line by line 
+
+uske baad aaya functions ryt jismai we made sure to maintain the data redundancy (reduce)
+and improve code reuseability (increase)
+
+as we have seen we successfully moved from procedural to functional 
+programming which is better and as we know we always want the best so we went to oops.
+which is object oriented programming.
+
+now lets dive deep into the topic which is object and class.
+object:
+rough example: what is object ? this laptop is a object?, my keyboard is an object
+so basically we can say we can make anything an object but before that we would need to 
+define a class in oops.
+
+class is like a blueprint like a plan of 30*40 flat . using this class we can create multiple objects init
+
+now lets jump to actual definition of class:
+ 
+its a blueprint for creating objects
+
+chalo abhi mai ek example deta hu , for example we have a class of students 
+and i want to store the names of students in the class register , we can use the concept of class and objects
+for example:
+class Student: #first char of the class name must be in uppercase
+    name="karan" # let us suppose ki saare bacho ka naam karan hai ryt
+s1=Student() # the object instance (here we are explicitly telling python kaka that bhaiya s1 is my instance of Student class)
+print(s1) # prints that we have created a object of Student class at some mem address
+print(s1.name) #prints the name which is karan
+s2=Student()
+print(s2.name)
+
+this was simple ryt lets look up with another example 
+class Car:
+    color="black"
+    brand="mercedes"
+car1=Car() #object created or instance of the class is created
+print(car1.color)
+print(car1.brand)
+
+#constructor------> while object creation it is invoked.it is a special function which is used to initialize the attributes of the class.
+__init__ function:
+all classes have a function called __init__(), which is always executed when the object is being initiated .
+
+
+for example:
+class Student:
+    name="karan" 
+s1=Student() here 
+print(s1.name)
+s2=Student()
+print(s2.name)
+# it is very impoertant to understand what is happening here ryt
+by default python being very smart is applying the init function by itself and creating a object
+
+if were told to write a contructor by ourselfs then we can also do that
+like
+
+class Student:
+    name="karan"
+    def __init__(self): # gets called by itself or gets invoked my itself
+        print(self) #prints the object is created successfully at a mem loc
+        its similar to s1=Student() where we are creating the instance of the class ryt
+        both points towards same mem loc
+        print("adding new student in db...")
+s1=Student() #the parenthesis is used to call the constructor
+print(s1)
+one more important thing abt constructors are that it uses a parameter or argument  called as self parameter
+first parameter which is defined in init function is self
+
+self:      
+
+
+class Student:
+    def __init__(self,fullname): # gets called by itself or gets invoked my itself. we can give any name to the parameter self 
+    but it is a convention to use self,because it refers to the instance of the class.
+        self.name=fullname #here we are assigning the fullname to the name attribute of the class.
+        # self is a reference to the current instance of the class.
+        # what is attribute?
+        attribute is a variable which is defined inside the class and is used to store the data of the object.
+        print("adding new student in db...")
+s1=Student("karan") #the parenthesis is used to call the constructor
+print(s1.name) #karan
+
+
+
+also here is one more example
+class Student: #here __init__ is a constructor which is used to initialize the attributes of the class
+    def __init__(self, name, marks): #here we are defining a constructor which takes two parameters name and marks
+        self.name = name
+        self.marks = marks 
+        print("adding new student in Database..")
+
+s1 = Student("karan", 97)
+print(s1.name, s1.marks)  # karan 97
+
+s2 = Student("arjun", 88)
+print(s2.name, s2.marks)  # arjun 88
+
+class is collection of variables and methods which are used to define the properties and behaviour of the object.
+
+contructors are of two types:
+1. default constructor: which takes no parameters and initializes the attributes of the class with default values.
+for example:
+class Student:
+    def __init__(self):  # default constructor
+        pass  # here we are not initializing any attributes of the class
+example 2 :
+class Student:
+    def __init__(self, name="karan", marks=0):  # default constructor with default values
+        self.name = name
+        self.marks = marks 
+        print("adding new student in Database..")
+        
+2. parameterized constructor: which takes parameters and initializes the attributes of the class with the values passed as arguments.
+example:
+class Student:
+    def __init__(self, name, marks):  # parameterized constructor
+        self.name = name
+        self.marks = marks 
+        print("adding new student in Database..")
+        
+class and instance attributes:
+class attributes are the variables which are defined inside the class and are used to store the data of the object.
+whereas instance attributes are the variables which are defined inside the constructor and are used to store the data of the object.
+
+object attributes are the variables or properties that are associated with an object.
+
+now lets look at the example of class and instance attributes
+for example:
+class Student:
+    school_name = "ABC School"  # class attribute
+    def __init__(self, name, marks):  # constructor # here self is a reference to the current instance of the class.
+        self.name = name  # instance attribute 
+        self.marks = marks  # instance attribute
+        
+    as we know name and marks are different for all the students but school name is same for all the students.
+    so we can say that school_name is a class attribute and name and marks are instance attributes.
+    
+    when class attribute and object attribute have same name then object attribute takes precedence over class attribute.
+    
+    
+    class mein do cheeze store hoti hai:
+    1.data (attribute): class ki kya kya properties hai ya fir i can say which is used to store the data of the object or attributes of the class.
+    2.methods: which are the functions which are used to define the behaviour of the object.
+    or in simple words we can say that methods are the functions which are defined inside the class and are used to perform some operations on the data of the object.
+    
+    for example:
+    class Student:
+        def __init__(self, fullname):
+            self.name = fullname
+        def hello(self):  # method
+            print("hello", self.name)  or print(f"hello {self.name}")
+            here self is a reference to the current instance of the class.
+    s1 = Student("karan")
+    s1.hello()  # hello karan
+      
+lets solve a q on it
+class Student:
+    def __init__(self, name, marks): #we consider marks is a list of marks
+        self.name = name
+        self.marks = marks
+    def get_avg(self,sum=0):
+        for i in self.marks:
+            sum += i
+        print(f"average marks of {self.name} is {sum/len(self.marks)}")
+s1=Student("karan", [90, 80, 70, 60])
+s1.get_avg() 
+
+s1.name="ironman" #we can change the attribute value or manipulate them at any instance of time.
+s1.get_avg()  # average marks of ironman is 75.0 
+
+static methods:
+these are the methods that dont use the self parameter(works at class level)
+as we can see we dont need objects so what we do is we try to work at class level
+class student:
+    @staticmethod #decorator to define a static method
+    def hello():
+        print("hello from static method")
+        
+    decorators: it allows us to wrap a function or method in 
+    another function or method to modify its behaviour permanently.
+    
+pillars of oops:
+1.abstraction: hiding the implementation details and showing only the essential features of the object.
+2.encapsulation: bundling the data and methods that operate on the data within a single unit or class.
+
+class Car:
+    def __init__(self):
+        self.acc=False
+        self.brk=False
+        self.clutch=False
+    def start(self):
+        self.clutch=True
+        self.acc=True
+        print("car started...")
+        
+car1=Car()
+car1.start()    
+
+this is called abstraction where we are hiding the implementation details or code and just delivering essemtial features of the object to user.   
+   
+encapsulation:
+we try to create a capsule of the data + functions
+
+practice q
+
+class Account:
+    def __init__(self,bal,acc):
+        self.balance=bal
+        self.accountno=acc
+    def debit(self,amount):
+        self.balance-=amount
+        print("rs.",amount,"was debitted")
+        print("total balance",self.get_balance())
+    def credit(self,amount):
+        self.balance+=amount
+        print("rs.",amount,"was creditted")
+        print("total balance",self.get_balance())
+    def get_balance(self):
+        return self.balance
+
+acc1=Account(10000,12345)
+# print(acc1.balance)
+# print(acc1.accountno)
+acc1.debit(1000)
+acc1.credit(500)
+acc1.credit(40000)
+
+# class Student:
+#     def __init__(self, name, marks):  # parameterized constructor
+#         self.name = name
+#         self.marks = marks 
+#         print("adding new student in Database..")
+#         print(self)
+# ob=Student("ram",1)
+# print(ob)
+
+
+when class is created it internally divides the memory like key value pairs .
+all the properties will be stored in that memory layer.
+each property will have a reference address.
+the key layer will have an address which will be stored with respect to class name .
+when an object is created for a class all the properties of class will be derived to object.
+the key layer of object dictionary will have an address which will be stored with respect to object name.
+syntax:
+access:cname/objectname.pname
+modify:cname/objectname.pname=value
+
+key space          | value space
+hero
+x099
+
+class hero:
+    a=10
+ob=hero()
+ob.a=30
+hero.a=20
+
+note:
+if a property is modified with respect to classname , will effect all the objects.
+if it is modified with respect to an object it effects only for that particular object.
+
+class properties:these are the properties or members which are common for each and every object.
+object members are the specific members which are different for every object
+example:if a python class is considered as class , students are objects
+classname- a1
+object-students
+cmem-chairs,nannu , board
+ob.mem- name , dob , area, phone 
+
+#create a class called suiiiiii with minimum 5 class properties,6 object properties, 3 objects,print the properties of all objects
+
+
+class Rm:
+    rm="realmadrid"
+    lw="karim benzema"
+    rw="zizou"
+    fwd="david beckam"
+    gk="Navas"
+    def __init__(self,pos,name,st="Cristiano Ronaldo",cb="roberto carlos",lb="marcelo",rb="sergio ramos"):
+        self.pos=name
+        self.st=st
+        self.cb=cb
+        self.lb=lb
+        self.rb=rb
+p1=Rm("lw","vini jr")
+p2=Rm("rw","rodrigo")
+p3=Rm("mf","tony kroos")
+print(p1.cb,p1.gk,p1.rb,p1.pos,p1.fwd,sep="\n")
+
+
+types of method:
+1.object method : it is method used to access and modify the object members
+2.class method : it is used to access and modify the class members
+3.static method
+
+object method example:
+class Love:
+    def __init__(self,lover1,lover2):
+        self.name1=lover1
+        self.name2=lover2
+    def display(self):  #object access
+        print(f"{self.name1} is in love with {self.name2}")
+    def affair(self,lover3):    #object modification
+        self.name2=lover3
+r1=Love("Juliet","romeo")
+r2=Love("radha","krishna")
+r3=Love("anuska","virat")
+r4=Love("sai palavi","ram")
+r1.display()
+r2.display()
+r3.display()
+r4.display()
+r4.affair("cheeku")
+r4.display()
+Love.display(r2)
+
+
+class method example:
+
+class Love:
+    lovetyp="relationship"
+    nop=2
+    tor="5 yrs"
+    
+    def __init__(self,lover1,lover2):
+        self.name1=lover1
+        self.name2=lover2
+    @classmethod
+    def display(cls):  #class access
+        print(f"{cls.nop} are in {cls.lovetyp} for {cls.tor}")
+    @classmethod
+    def new_tor(cls):    #class modification
+        ntor=input("enter the new tor: ")
+        cls.tor=ntor
+Love.display()
+r3=Love("anuska","virat")
+r3.display()
+Love.new_tor()
+Love.display()
+
+class Love:
+    lovetyp="relationship"
+    nop=2
+    tor="5 yrs"
+    
+    def __init__(self,lover1,lover2,status):
+        self.name1=lover1
+        self.name2=lover2
+        self.status=status
+    
+    def display(self):  #object access
+        print(f"{self.name1} is in love with {self.name2} and are {self.status}")
+        
+    def breakup(self,status="divorse"):    #object modification
+        self.name2=status
+        print(f"{self.name1} has given divorse to {self.name2}")
+        
+    def affair(self,lover3):    #object modification
+        self.name2=lover3
+    @classmethod
+    def display_cls(cls):  #class access
+        print(f"{cls.nop} are in {cls.lovetyp} for {cls.tor}")
+    @classmethod
+    def mod_class(cls):    #class modification
+        new=input("enter the class method name:  ")
+        if new=="tor":
+            ntor=input("enter the new time of relationship :  ")
+            cls.tor=ntor
+        elif new=="nop":
+            nnop=int(input("enter the no of people in love :  "))
+            cls.nop=nnop
+        elif new=="lovetyp":
+            nlovetyp=input("enter the current status :  ")
+            cls.lovetyp=nlovetyp
+        else:
+            print("correct class name")
+            
+            
+        
+            
+Love.display_cls()
+r3=Love("anuska","virat","married")
+r3.display_cls()
+Love.mod_class()
+Love.display_cls()
+
+
+
+static method
+it is method which neither belong to class or object members but it plays a supportive role for both class method and object method
+it is not necessary to pass self/self as argument.
+static method decorator have to be used before the function declaration 
+note:
+it is not necessary to call static method outside the class .
+
+it is used to access inside the class
+by using 
+self.mname(args)
+
+
+syntax
+class x:
+    -----
+    -----
+    -----
+    @staticmethod
+    def mname(arg1,arg2...argn):
+        S.B
+        
+obj=cname(values)
+
+example: bank
+
+class HDFC:
+    def __init__(self,bal,acc):
+        self.balance=bal
+        self.accountno=acc
+    def debit(self,amount):
+        if self,balance>=amount:
+            self.balance-=amount
+        print("rs.",amount,"was debitted")
+        print("total balance",self.get_balance())
+    @staticmethod
+    def add(a,b):
+        return a+b
+    def credit(self):
+        amount=int(input("enter the amount to be credit: "))
+        self.balance=self.add(self.balance,amount)
+        print("rs.",amount,"was creditted")
+        print("total balance",self.get_balance())
+    def get_balance(self):
+        return self.balance
+
+
+create a class called library with basic methods and properties,
+add or create methods like issue book,and return book , a person can take only 4 books
+
+ 
+class Lib:
+    librarian="ariana grande"
+    books={"Mahabharata":10,"Ramayana":5,"harry puuter":7,"One piece":3}
+    def __init__(self,stname,phno,book={}):
+        self.stname=stname
+        self.phno=phno
+        self.book=book
+        
+         
+    @classmethod
+    def display_book(self):
+            print(self.books)
+    
+    def issue(self):
+        print(self.books)
+        bk=input("enter the bookname: ")
+        if bk in self.books:
+            if self.books[bk]>0 and len(self.book)<=5:
+                print(f"{bk} is successfully issued!!")
+                self.book[bk]=1
+                
+                self.books[bk]-=1
+                print(self.books)
+            else:
+                print(f"{bk} is out of stock!!!")
+        else:
+            print(f"{bk} is not available in library!!! ")
+        
+ob=Lib("kishore",9888567802)
+ob.issue()
+    
+pillars of oops:
+1.inheritance:
+it is the phenomemon of deriving the properties from one class to another class.
+the class from where properties are derived is called as parent class, super class,base class
+class to which properties are derived is called as child class, sub class, derived class
+
+example:
+parent class
+    |
+    |
+    |
+child class
+
+advantages:
+it reduces the instructions. 
+it reduces the code repeatation 
+it improves efficiency of the program
+it reduces time and effort consumed by a programmer.
+
+types of inheritance:
+1.single level inheritance
+2.multi level inheritance
+3.multiple inheritance
+4.heirachial inheritance
+5.hybrid inheritance
+
+single level inheritance
+it is phenomenon of deriving properties from 1 parent class to 1 child class,
+syntax:
+class pc:
+    sb
+class cc(pc):
+    sb
+    
+diagram:  
+parent class
+    |
+    |
+    |
+child class
+
+class Thaatha:
+    d=7
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+class Ban(Thaatha):
+    y=2
+csk=ban(16,5)
+
+
+
+
+constructor chaining : it is the phenomenon of calling the init method of parent class from child class.
+
+syntax:
+super().__init__(args)
+super(child,self).__init__(args)
+pname.__init__(self,args)
+
+
+class Thaatha:
+    d=7
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+class Ban(Thaatha):
+    y=2
+    def __init__(self,a,b,p,q,r):
+        super().__init__(a,b)
+        self.p=p
+        self.q=q
+        self.r=r
+csk=ban(1,2,3,4,5)
+
+method chaining:
+it is the phenomenon of calling the method of parent class to child class.
+super().mname(args)
+super(child,self/cls).mname(args)
+pname(mname(self,args))
+
+multilevel inheritance:
+it is the phenomenon of deriving properties from 1 class to another by considering more than 1 level.
+
+
+class a:
+    x=8
+class b(a):
+    y=3
+    p=18
+    x=99
+class c(b):
+    t=11
+    k=45
+ob1=c()
+print(ob1.x)
+
+
+class Resume10:
+    def __init__(self,x_per,x_yop):
+        self.x_per=x_per
+        self.x_yop=x_yop
+    def disp1(self):
+        print(self.x_per,self.x_yop)  
+class Resume12(Resume10):
+    def __init__(self,x_per,x_yop,xii_per,xii_yop):
+        super().__init__(x_per,x_yop)
+        self.xii_per=xii_per
+        self.xii_yop=xii_yop
+    def disp(self):
+        super().disp1()
+        print(self.xii_per,self.xii_yop)
+        
+class Resumeclg(Resume12):
+    def __init__(self,x_per,x_yop,xii_per,xii_yop,deg_per,deg_yop):
+        super().__init__(xii_per,xii_yop)
+        super().__init__(x_per,x_yop)
+        self.deg_per=deg_per
+        self.deg_yop=deg_yop
+    def disp2(self):
+        super().disp1()
+        super().disp()
+        print(self.deg_per,self.deg_yop)
+
+multiple inheritance : it is the phenomenon of deriving properties from multiple parent class to single child class
+
+class p1:
+    s.b
+class p2:
+    s.b
+class c1(p1,p2): executes from right to left as per mro (method resolution order)
+    s.b
+    
+class A:
+    p=10
+class B:
+    y=99
+    f=66
+    p=99
+class C(A,B):
+    s=12
+
+
+ob=C()
+print(ob.p)
+
+
+heirchieal inheritance
+deriving properties from single parent class to multiple child class.
+syntax:
+
+class pc:
+    s.b
+class c1(pc):
+    s.b
+class c2(pc):
+    s.b
+class c3(pc):
+    s.b
+
+class A:
+    m=19
+class B(A):
+    p=12
+class C(A):
+    q=32
+ob1=C()  #q,m
+ob2=B()  #p,m
+
+hybrid inheritance:it is type of inheritance which can be done by combining more than 1 type of inheritance
+it doesnt have a proper syntax.
+example: combination of single level and multiple inheritance 
+class addition:
+    @staticmethod
+    def add(a,b):
+        return a+b
+class substraction(Addition):
+    @staticmethod
+    def sub(a,b):
+    return a-b
+class Division:
+    @staticmethod
+    def div(a,b):
+        return a/b
+class Calci(substraction,Division):
+    @staticmethod
+    def mul(a,b):
+        return a*b    
+
+
+
 def add(a,b,c=0):
     print(a+b+c)
 add(1,4,5)
@@ -905,7 +1596,7 @@ else:
 
 
 assertion Error:
-if it is required to throw a error message based on condition "assert" keyword can be used
+if it is required to throw an error message based on condition "assert" keyword can be used
 
 syntax:
 assert condition,"message"
